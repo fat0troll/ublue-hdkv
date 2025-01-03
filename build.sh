@@ -32,5 +32,8 @@ rpm-ostree install cairo-devel \
         wayland-devel \
         xset
 
+# Install Inter font
+rpm-ostree install rsms-inter-font
+
 # Enable docker socket
 systemctl enable docker.socket

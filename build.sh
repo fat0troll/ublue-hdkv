@@ -33,7 +33,7 @@ rpm-ostree install cairo-devel \
         xset
 
 # Install Inter font
-rpm-ostree install rsms-inter-font
+rpm-ostree install rsms-inter-fonts
 
 # Enable docker socket
 systemctl enable docker.socket

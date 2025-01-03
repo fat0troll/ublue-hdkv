@@ -37,3 +37,9 @@ rpm-ostree install rsms-inter-fonts
 
 # Enable docker socket
 systemctl enable docker.socket
+
+# Install ZSH configuration
+cd /usr/share
+git clone https://code.pztrn.name/hdkv/zsh-config.git
+git checkout hdkv/ublue-hdkv
+cd -

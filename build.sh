@@ -35,6 +35,9 @@ rpm-ostree install cairo-devel \
 # Install Inter font
 rpm-ostree install rsms-inter-fonts
 
+# Install goverlay (why it doesn't ship with bazzite?!)
+rpm-ostree install goverlay
+
 # Enable docker socket
 systemctl enable docker.socket
 

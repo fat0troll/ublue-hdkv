@@ -5,7 +5,7 @@ set -ouex pipefail
 RELEASE="$(rpm -E %fedora)"
 
 # Install docker
-rpm-ostree install docker-ce \
+dnf -y install docker-ce \
         docker-ce-cli \
         docker-buildx-plugin \
         docker-compose-plugin \
@@ -13,14 +13,14 @@ rpm-ostree install docker-ce \
 
 
 # Install zsh and utilites for it
-rpm-ostree install zsh \
+dnf -y install zsh \
         zsh-autosuggestions
 
 # Install flatpak builder
-rpm-ostree install flatpak-builder
+dnf -y install flatpak-builder
 
 # Install dependencies for Toshy
-rpm-ostree install cairo-devel \
+dnf -y install cairo-devel \
         cairo-gobject-devel \
         dbus-devel \
         evtest \
@@ -33,10 +33,10 @@ rpm-ostree install cairo-devel \
         xset
 
 # Install Inter font
-rpm-ostree install rsms-inter-fonts
+dnf -y install rsms-inter-fonts
 
-# Install goverlay (why it doesn't ship with bazzite?!)
-rpm-ostree install goverlay
+# Install goverlay
+dnf -y install goverlay
 
 # Enable docker socket
 systemctl enable docker.socket
@@ -46,3 +46,10 @@ cd /usr/share
 git clone https://code.pztrn.name/hdkv/zsh-config.git
 cd zsh-config
 git checkout hdkv/ublue-hdkv
+
+# Cleanup (taken from achillobator)
+# shellcheck disable=SC2115
+rm -rf /var/!(cache)
+rm -rf /var/cache/!(rpm-ostree)
+rm -rf /var/tmp
+dnf clean all

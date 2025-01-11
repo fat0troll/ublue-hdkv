@@ -4,6 +4,12 @@ Custom bazzite-nvidia-open image for my own use case. May be useful for you as a
 
 I do not provide support for this image. Use upstream Bazzite or make your own forks of image-template if needed.
 
+## How to switch to this image
+
+```
+sudo bootc switch ghcr.io/fat0troll/ublue-hdkv:latest --enforce-container-sigpolicy
+```
+
 Below is the original README verbatim.
 
 ---
@@ -71,7 +77,9 @@ This provides users a method of verifying the image.
    cosign generate-key-pair
    ```
 
-   - Do NOT put in a password when it asks you to, just press enter. The signing key will be used in GitHub Actions and will not work if it is encrypted.
+````
+
+- Do NOT put in a password when it asks you to, just press enter. The signing key will be used in GitHub Actions and will not work if it is encrypted.
 
 > [!WARNING]
 > Be careful to _never_ accidentally commit `cosign.key` into your git repo.
@@ -96,3 +104,4 @@ This provides users a method of verifying the image.
 - [m2os](https://github.com/m2giles/m2os)
 - [bos](https://github.com/bsherman/bos)
 - [homer](https://github.com/bketelsen/homer/)
+````

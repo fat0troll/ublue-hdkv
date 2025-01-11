@@ -47,9 +47,5 @@ git clone https://code.pztrn.name/hdkv/zsh-config.git
 cd zsh-config
 git checkout hdkv/ublue-hdkv
 
-# Cleanup (taken from achillobator)
-# shellcheck disable=SC2115
-rm -rf /var/!(cache)
-rm -rf /var/cache/!(rpm-ostree)
-rm -rf /var/tmp
+# Cleanup
 dnf clean all

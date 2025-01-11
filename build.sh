@@ -13,7 +13,7 @@ rpm-ostree install docker-ce \
 
 
 # Install zsh and utilites for it
-rpm-ostree install zsh \
+rpm-ostree install konsole zsh \
         zsh-autosuggestions
 
 # Install flatpak builder

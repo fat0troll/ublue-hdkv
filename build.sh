@@ -38,6 +38,9 @@ dnf -y install rsms-inter-fonts
 # Install goverlay
 dnf -y install goverlay
 
+# Install VS Code
+dnf -y install code
+
 # Enable docker socket
 systemctl enable docker.socket
 

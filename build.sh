@@ -41,6 +41,9 @@ dnf -y install goverlay
 # Install VS Code
 dnf -y install code
 
+# Install Kleopatra natively
+dnf -y install kleopatra
+
 # Enable docker socket
 systemctl enable docker.socket
 

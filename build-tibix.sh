@@ -23,7 +23,7 @@ dnf -y install dmg2img \
     qdirstat
 
 # TODO: follow ngrok releases from AUR
-wget -O /tmp/ngrok.tar.gz https://bin.equinox.io/a/9VU6NY9RyvK/ngrok-v3-3.19.1-linux-amd64.tar.gz
+wget --hsts-file /tmp/.wget-hsts -O /tmp/ngrok.tar.gz https://bin.equinox.io/a/9VU6NY9RyvK/ngrok-v3-3.19.1-linux-amd64.tar.gz
 mkdir /tmp/ngrok-install
 tar -xf /tmp/ngrok.tar.gz -C /tmp/ngrok-install
 mv /tmp/ngrok-install/ngrok /usr/bin

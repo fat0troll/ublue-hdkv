@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
 
 env:
-  MY_IMAGE_NAME: "${{ github.event.repository.name }}" # the name of the image produced by this build, matches repo names
+  MY_IMAGE_NAME: "${{ github.event.repository.name }}-tibix" # the name of the image produced by this build, matches repo names
   MY_IMAGE_DESC: "My Customized Universal Blue Image"
   IMAGE_REGISTRY: "ghcr.io/${{ github.repository_owner }}" # do not edit
 
@@ -59,8 +59,8 @@ jobs:
               BUILD_TAGS+=("${TAG}-${TIMESTAMP}-tibix")
           done
 
-          BUILD_TAGS+=("${TIMESTAMP}-tibix")
-          BUILD_TAGS+=("latest-tibix")
+          BUILD_TAGS+=("${TIMESTAMP}")
+          BUILD_TAGS+=("latest")
 
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
               echo "Generated the following commit tags: "

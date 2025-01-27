@@ -55,6 +55,3 @@ cd /usr/share
 git clone https://code.pztrn.name/hdkv/zsh-config.git
 cd zsh-config
 git checkout hdkv/ublue-hdkv
-
-# Cleanup
-dnf clean all

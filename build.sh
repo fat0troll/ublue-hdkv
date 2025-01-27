@@ -44,6 +44,9 @@ dnf -y install code
 # Install Kleopatra natively
 dnf -y install kleopatra
 
+# Install useful CLI tools
+dnf -y install telnet
+
 # Enable docker socket
 systemctl enable docker.socket
 

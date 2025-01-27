@@ -1,0 +1,10 @@
+[copr:copr.fedorainfracloud.org:jc141:DwarFS]
+name=Copr repo for DwarFS owned by jc141
+baseurl=https://download.copr.fedorainfracloud.org/results/jc141/DwarFS/fedora-$releasever-$basearch/
+type=rpm-md
+skip_if_unavailable=True
+gpgcheck=1
+gpgkey=https://download.copr.fedorainfracloud.org/results/jc141/DwarFS/pubkey.gpg
+repo_gpgcheck=0
+enabled=1
+enabled_metadata=1

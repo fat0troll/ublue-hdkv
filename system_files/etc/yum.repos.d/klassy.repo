@@ -1,0 +1,7 @@
+[home_paul4us]
+name=home:paul4us (Fedora_41)
+type=rpm-md
+baseurl=https://download.opensuse.org/repositories/home:/paul4us/Fedora_41/
+gpgcheck=1
+gpgkey=https://download.opensuse.org/repositories/home:/paul4us/Fedora_41/repodata/repomd.xml.key
+enabled=1

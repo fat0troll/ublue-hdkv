@@ -1,8 +1,8 @@
 # ublue-hdkv
 
-Custom bazzite-nvidia-open image for my own use case. May be useful for you as an example, may be not.
+Custom bazzite images for my own use case (and also for my friends). May be useful for you as an example, may be not.
 
-I do not provide support for this image. Use upstream Bazzite or make your own forks of image-template if needed.
+I do not provide support for this image (unless you're part of MTV). Use upstream Bazzite or make your own forks of image-template if needed.
 
 ## How to switch to this image
 

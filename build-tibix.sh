@@ -33,6 +33,3 @@ rm -r /tmp/ngrok*
 # maybe let dependabot handle those?
 # amdgpu_top
 dnf -y install https://github.com/Umio-Yasuno/amdgpu_top/releases/download/v0.10.1/amdgpu_top-0.10.1-1.x86_64.rpm
-
-# Hydra Launcher
-dnf -y install https://github.com/hydralauncher/hydra/releases/download/v3.1.5/hydralauncher-3.1.5.x86_64.rpm

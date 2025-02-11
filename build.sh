@@ -51,6 +51,9 @@ dnf -y install telnet
 dnf -y install darkly \
     klassy
 
+# Install mingw64-gcc for Nikke
+dnf -y install mingw64-gcc
+
 # Enable docker socket
 systemctl enable docker.socket
 

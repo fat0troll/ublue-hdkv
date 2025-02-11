@@ -44,6 +44,10 @@ dnf -y install code
 # Install Kleopatra natively
 dnf -y install kleopatra
 
+# Install konsole
+# TODO: unmask it
+dnf -y install konsole
+
 # Install useful CLI tools
 dnf -y install telnet
 

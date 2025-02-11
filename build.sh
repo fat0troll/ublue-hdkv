@@ -47,6 +47,10 @@ dnf -y install kleopatra
 # Install useful CLI tools
 dnf -y install telnet
 
+# Install darkly and klasy
+dnf -y install darkly \
+    klassy
+
 # Enable docker socket
 systemctl enable docker.socket
 

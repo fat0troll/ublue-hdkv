@@ -13,12 +13,10 @@ dnf -y install https://dl.fedoraproject.org/pub/fedora/linux/releases/40/Everyth
 # Install additional packages
 dnf -y install dmg2img \
     python3-vkbasalt-cli \
-    darkly \
     dotool \
     dwarfs \
     libFAudio \
     fsearch \
-    klassy \
     ksysguard6 \
     qdirstat \
     wine

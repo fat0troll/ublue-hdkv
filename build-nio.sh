@@ -27,8 +27,3 @@ mkdir /tmp/ngrok-install
 tar -xf /tmp/ngrok.tar.gz -C /tmp/ngrok-install
 mv /tmp/ngrok-install/ngrok /usr/bin
 rm -r /tmp/ngrok*
-
-# TODO: make sure these packages are also auto-updated!!
-# maybe let dependabot handle those?
-# amdgpu_top
-dnf -y install https://github.com/Umio-Yasuno/amdgpu_top/releases/download/v0.10.1/amdgpu_top-0.10.1-1.x86_64.rpm

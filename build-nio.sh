@@ -42,5 +42,3 @@ rm -r /tmp/zrok*
 # TODO: autoupdate
 # hakuneko-desktop
 dnf -y install https://github.com/manga-download/hakuneko/releases/download/v6.1.7/hakuneko-desktop_6.1.7_linux_amd64.rpm
-# mega-sync
-dnf -y install https://mega.nz/linux/repo/Fedora_41/x86_64/megasync-Fedora_41.x86_64.rpm

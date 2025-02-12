@@ -32,7 +32,7 @@ mv /tmp/ngrok-install/ngrok /usr/bin
 rm -r /tmp/ngrok*
 
 # TODO: follow zrok releases from Github
-wget --hsts-file /tmp/.wget-hsts -o /tmp/zrok.tar.gz https://github.com/openziti/zrok/releases/download/v0.4.47/zrok_0.4.47_linux_amd64.tar.gz
+wget --hsts-file /tmp/.wget-hsts -O /tmp/zrok.tar.gz https://github.com/openziti/zrok/releases/download/v0.4.47/zrok_0.4.47_linux_amd64.tar.gz
 mkdir /tmp/zrok-install
 tar -xf /tmp/zrok.tar.gz -C /tmp/zrok-install
 mv /tmp/zrok-install/zrok /usr/bin

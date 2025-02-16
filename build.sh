@@ -5,7 +5,7 @@ set -ouex pipefail
 RELEASE="$(rpm -E %fedora)"
 
 # Install docker
-dnf -y install docker-ce \
+rpm-ostree -y install docker-ce \
         docker-ce-cli \
         docker-buildx-plugin \
         docker-compose-plugin \
@@ -13,14 +13,14 @@ dnf -y install docker-ce \
 
 
 # Install zsh and utilites for it
-dnf -y install zsh \
+rpm-ostree -y install zsh \
         zsh-autosuggestions
 
 # Install flatpak builder
-dnf -y install flatpak-builder
+rpm-ostree -y install flatpak-builder
 
 # Install dependencies for Toshy
-dnf -y install cairo-devel \
+rpm-ostree -y install cairo-devel \
         cairo-gobject-devel \
         dbus-devel \
         evtest \
@@ -33,30 +33,30 @@ dnf -y install cairo-devel \
         xset
 
 # Install Inter font
-dnf -y install rsms-inter-fonts
+rpm-ostree -y install rsms-inter-fonts
 
 # Install goverlay
-dnf -y install goverlay
+rpm-ostree -y install goverlay
 
 # Install VS Code
-dnf -y install code
+rpm-ostree -y install code
 
 # Install Kleopatra natively
-dnf -y install kleopatra
+rpm-ostree -y install kleopatra
 
 # Install konsole
 # TODO: unmask it
-dnf -y install konsole
+rpm-ostree -y install konsole
 
 # Install useful CLI tools
-dnf -y install telnet
+rpm-ostree -y install telnet
 
 # Install darkly and klasy
-dnf -y install darkly \
+rpm-ostree -y install darkly \
     klassy
 
 # Install mingw64-gcc for Nikke
-dnf -y install mingw64-gcc
+rpm-ostree -y install mingw64-gcc
 
 # Enable docker socket
 systemctl enable docker.socket

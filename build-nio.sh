@@ -8,10 +8,10 @@ RELEASE="$(rpm -E %fedora)"
 # may break on Fedora 42!
 # and yes, it's the official way to install it
 # see https://github.com/cboxdoerfer/fsearch/issues/584
-dnf -y install https://dl.fedoraproject.org/pub/fedora/linux/releases/40/Everything/x86_64/os/Packages/l/libicu73-73.2-1.fc40.x86_64.rpm
+rpm-ostree -y install https://dl.fedoraproject.org/pub/fedora/linux/releases/40/Everything/x86_64/os/Packages/l/libicu73-73.2-1.fc40.x86_64.rpm
 
 # Install additional packages
-dnf -y install dmg2img \
+rpm-ostree -y install dmg2img \
     python3-vkbasalt-cli \
     dotool \
     dwarfs \
@@ -41,4 +41,4 @@ rm -r /tmp/zrok*
 
 # TODO: autoupdate
 # hakuneko-desktop
-dnf -y install https://github.com/manga-download/hakuneko/releases/download/v6.1.7/hakuneko-desktop_6.1.7_linux_amd64.rpm
+rpm-ostree -y install https://github.com/manga-download/hakuneko/releases/download/v6.1.7/hakuneko-desktop_6.1.7_linux_amd64.rpm

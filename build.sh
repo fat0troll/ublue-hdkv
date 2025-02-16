@@ -5,7 +5,7 @@ set -ouex pipefail
 RELEASE="$(rpm -E %fedora)"
 
 # Install docker
-rpm-ostree -y install docker-ce \
+dnf5 -y install docker-ce \
         docker-ce-cli \
         docker-buildx-plugin \
         docker-compose-plugin \
@@ -13,14 +13,14 @@ rpm-ostree -y install docker-ce \
 
 
 # Install zsh and utilites for it
-rpm-ostree -y install zsh \
+dnf5 -y install zsh \
         zsh-autosuggestions
 
 # Install flatpak builder
-rpm-ostree -y install flatpak-builder
+dnf5 -y install flatpak-builder
 
 # Install dependencies for Toshy
-rpm-ostree -y install cairo-devel \
+dnf5 -y install cairo-devel \
         cairo-gobject-devel \
         dbus-devel \
         evtest \
@@ -33,29 +33,29 @@ rpm-ostree -y install cairo-devel \
         xset
 
 # Install Inter font
-rpm-ostree -y install rsms-inter-fonts
+dnf5 -y install rsms-inter-fonts
 
 # Install goverlay
-rpm-ostree -y install goverlay
+dnf5 -y install goverlay
 
 # Install VS Code
-rpm-ostree -y install code
+dnf5 -y install code
 
 # Install Kleopatra natively
-rpm-ostree -y install kleopatra
+dnf5 -y install kleopatra
 
 # Install konsole
 # TODO: unmask it
-rpm-ostree -y install konsole
+dnf5 -y install konsole
 
 # Install useful CLI tools
-rpm-ostree -y install telnet
+dnf5 -y install telnet
 
 # Install darkly and klasy
-rpm-ostree -y install darkly # klassy is not ready for Plasma 6.3 yet
+dnf5 -y install darkly # klassy is not ready for Plasma 6.3 yet
 
 # Install mingw64-gcc for Nikke
-rpm-ostree -y install mingw64-gcc
+dnf5 -y install mingw64-gcc
 
 # Enable docker socket
 systemctl enable docker.socket

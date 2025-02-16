@@ -52,8 +52,7 @@ rpm-ostree -y install konsole
 rpm-ostree -y install telnet
 
 # Install darkly and klasy
-rpm-ostree -y install darkly \
-    klassy
+rpm-ostree -y install darkly # klassy is not ready for Plasma 6.3 yet
 
 # Install mingw64-gcc for Nikke
 rpm-ostree -y install mingw64-gcc

@@ -55,7 +55,7 @@ dnf5 -y install telnet
 dnf5 -y install darkly # klassy is not ready for Plasma 6.3 yet
 
 # Install mingw64-gcc for Nikke
-dnf5 -y install mingw64-gcc
+dnf5 -y install mingw64-gcc mingw32-gcc
 
 # Enable docker socket
 systemctl enable docker.socket

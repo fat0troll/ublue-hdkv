@@ -37,4 +37,4 @@ dnf5 -y install https://github.com/Umio-Yasuno/amdgpu_top/releases/download/v0.1
 dnf5 -y install https://static.tibix.hdkv.online/How.to.Convert-1.0.5-1.x86_64.rpm
 
 # XPipe
-dnf5 -y https://github.com/xpipe-io/xpipe/releases/latest/download/xpipe-installer-linux-x86_64.rpm
+dnf5 -y install https://github.com/xpipe-io/xpipe/releases/latest/download/xpipe-installer-linux-x86_64.rpm

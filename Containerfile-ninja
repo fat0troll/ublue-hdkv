@@ -49,11 +49,13 @@ FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
 COPY build.sh /tmp/build.sh
+COPY build-ninja.sh /tmp/build-ninja.sh
 
 COPY system_files /
 
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/build.sh && \
+    /tmp/build-ninja.sh && \
     dnf5 clean all && \
     ostree container commit
 ## NOTES:

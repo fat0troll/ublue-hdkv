@@ -18,7 +18,6 @@ dnf5 -y install dmg2img \
     fsearch \
     ksysguard6 \
     qdirstat \
-    wine \
     git-lfs \
     binutils
 

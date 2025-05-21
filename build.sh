@@ -41,13 +41,6 @@ dnf5 -y install goverlay
 # Install VS Code
 dnf5 -y install code
 
-# Install Kleopatra natively
-dnf5 -y install kleopatra
-
-# Install konsole
-# TODO: unmask it
-dnf5 -y install konsole
-
 # Install useful CLI tools
 dnf5 -y install telnet
 
@@ -56,6 +49,9 @@ dnf5 -y install darkly # klassy is not ready for Plasma 6.3 yet
 
 # Install mingw64-gcc for Nikke
 dnf5 -y install mingw64-gcc mingw32-gcc
+
+# Add docker group
+groupadd docker
 
 # Enable docker socket
 systemctl enable docker.socket

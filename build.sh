@@ -44,8 +44,8 @@ dnf5 -y install code
 # Install useful CLI tools
 dnf5 -y install telnet
 
-# Install darkly and klasy
-dnf5 -y install darkly # klassy is not ready for Plasma 6.3 yet
+# Install darkly and klassy
+dnf5 -y install darkly klassy
 
 # Install mingw64-gcc for Nikke
 dnf5 -y install mingw64-gcc mingw32-gcc

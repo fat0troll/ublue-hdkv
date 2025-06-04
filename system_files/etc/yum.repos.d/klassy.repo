@@ -1,7 +1,10 @@
-[home_paul4us]
-name=home:paul4us (Fedora_41)
+[copr:copr.fedorainfracloud.org:errornointernet:klassy]
+name=Copr repo for klassy owned by errornointernet
+baseurl=https://download.copr.fedorainfracloud.org/results/errornointernet/klassy/fedora-$releasever-$basearch/
 type=rpm-md
-baseurl=https://download.opensuse.org/repositories/home:/paul4us/Fedora_41/
+skip_if_unavailable=True
 gpgcheck=1
-gpgkey=https://download.opensuse.org/repositories/home:/paul4us/Fedora_41/repodata/repomd.xml.key
+gpgkey=https://download.copr.fedorainfracloud.org/results/errornointernet/klassy/pubkey.gpg
+repo_gpgcheck=0
 enabled=1
+enabled_metadata=1

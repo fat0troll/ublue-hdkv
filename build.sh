@@ -48,7 +48,7 @@ dnf5 -y install code
 dnf5 -y install telnet
 
 # Install darkly and klassy
-dnf5 -y install darkly # klassy is still broken
+dnf5 -y install darkly klassy
 
 # Install mingw64-gcc for Nikke
 dnf5 -y install mingw64-gcc mingw32-gcc

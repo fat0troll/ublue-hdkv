@@ -25,7 +25,6 @@ dnf5 -y install dmg2img \
     s-tui \
     croc \
     webkit2gtk4.1-devel \
-    meson \
 
 # TODO: follow ngrok releases from AUR
 wget --hsts-file /tmp/.wget-hsts -O /tmp/ngrok.tar.gz https://bin.equinox.io/a/9VU6NY9RyvK/ngrok-v3-3.19.1-linux-amd64.tar.gz

@@ -7,6 +7,14 @@ RELEASE="$(rpm -E %fedora)"
 dnf5 install --enable-repo="copr:copr.fedorainfracloud.org:ublue-os:packages" -y \
     ublue-setup-services
 
+# Install ventoy
+# Also, /opt shenanigans because this package doesn't like that /opt is a symlink.
+rm /opt
+dnf5 -y install ventoy
+mv /opt/ventoy /var/opt
+rmdir /opt
+ln -sf /var/opt /opt
+
 # Install docker
 dnf5 -y install docker-ce \
         docker-ce-cli \
@@ -41,8 +49,6 @@ dnf5 -y install rsms-inter-fonts
 # Install goverlay
 dnf5 -y install goverlay
 
-# Install ventoy
-dnf5 -y install ventoy
 
 # Install VS Code
 dnf5 -y install code

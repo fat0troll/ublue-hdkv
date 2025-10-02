@@ -7,13 +7,13 @@ RELEASE="$(rpm -E %fedora)"
 dnf5 install --enable-repo="copr:copr.fedorainfracloud.org:ublue-os:packages" -y \
     ublue-setup-services
 
+
 # Install ventoy
-# Also, /opt shenanigans because this package doesn't like that /opt is a symlink.
+# Also, /opt shenanigans.
 rm /opt
+mkdir /var/opt
+ln -s /var/opt /opt
 dnf5 -y install ventoy
-mv /opt/ventoy /var/opt
-rmdir /opt
-ln -sf /var/opt /opt
 
 # Install docker
 dnf5 -y install docker-ce \
@@ -21,7 +21,6 @@ dnf5 -y install docker-ce \
         docker-buildx-plugin \
         docker-compose-plugin \
         containerd.io
-
 
 # Install zsh and utilites for it
 dnf5 -y install zsh \

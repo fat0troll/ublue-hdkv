@@ -41,6 +41,9 @@ dnf5 -y install rsms-inter-fonts
 # Install goverlay
 dnf5 -y install goverlay
 
+# Install ventoy
+dnf5 -y install ventoy
+
 # Install VS Code
 dnf5 -y install code
 

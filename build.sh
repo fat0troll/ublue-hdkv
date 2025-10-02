@@ -7,14 +7,6 @@ RELEASE="$(rpm -E %fedora)"
 dnf5 install --enable-repo="copr:copr.fedorainfracloud.org:ublue-os:packages" -y \
     ublue-setup-services
 
-
-# Install ventoy
-# Also, /opt shenanigans.
-rm /opt
-mkdir /var/opt
-ln -s /var/opt /opt
-dnf5 -y install ventoy
-
 # Install docker
 dnf5 -y install docker-ce \
         docker-ce-cli \

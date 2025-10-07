@@ -18,7 +18,7 @@ dnf5 -y install dmg2img \
     sysprof
 
 # GhosTTY
-dnf5 copr enable scottames/ghostty
+dnf5 -y copr enable scottames/ghostty
 dnf5 -y install ghostty
 
 # TODO: follow ngrok releases from AUR

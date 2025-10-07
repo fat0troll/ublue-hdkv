@@ -17,6 +17,10 @@ dnf5 -y install dmg2img \
     perf \
     sysprof
 
+# GhosTTY
+dnf5 copr enable scottames/ghostty
+dnf5 install ghostty
+
 # TODO: follow ngrok releases from AUR
 wget --hsts-file /tmp/.wget-hsts -O /tmp/ngrok.tar.gz https://bin.equinox.io/a/9VU6NY9RyvK/ngrok-v3-3.19.1-linux-amd64.tar.gz
 mkdir /tmp/ngrok-install

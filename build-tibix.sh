@@ -30,9 +30,6 @@ rm -r /tmp/ngrok*
 # amdgpu_top
 dnf5 -y install https://github.com/Umio-Yasuno/amdgpu_top/releases/download/v0.11.0/amdgpu_top-0.11.0-1.x86_64.rpm
 
-# HowToConvert
-dnf5 -y install https://static.tibix.hdkv.online/How.to.Convert-1.0.5-1.x86_64.rpm
-
 # LSFG-VK
 dnf5 -y install https://github.com/PancakeTAS/lsfg-vk/releases/download/v1.0.0/lsfg-vk-1.0.0.x86_64.rpm
 

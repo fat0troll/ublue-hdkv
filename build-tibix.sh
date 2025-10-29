@@ -19,7 +19,7 @@ dnf5 -y install dmg2img \
     virt-viewer
 
 # TODO: follow ngrok releases from AUR
-wget --hsts-file /tmp/.wget-hsts -O /tmp/ngrok.tar.gz https://bin.equinox.io/a/9VU6NY9RyvK/ngrok-v3-3.19.1-linux-amd64.tar.gz
+wget --hsts-file /tmp/.wget-hsts -O /tmp/ngrok.tar.gz https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
 mkdir /tmp/ngrok-install
 tar -xf /tmp/ngrok.tar.gz -C /tmp/ngrok-install
 mv /tmp/ngrok-install/ngrok /usr/bin

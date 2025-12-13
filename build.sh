@@ -7,6 +7,12 @@ RELEASE="$(rpm -E %fedora)"
 dnf5 install --enable-repo="copr:copr.fedorainfracloud.org:ublue-os:packages" -y \
     ublue-setup-services
 
+# Install Qt V4L2 setup utility
+dnf5 -y install qv4l2
+
+# Install Ghostty
+dnf5 -y install ghostty
+
 # Install docker
 dnf5 -y install docker-ce \
         docker-ce-cli \
@@ -20,19 +26,6 @@ dnf5 -y install zsh \
 
 # Install flatpak builder
 dnf5 -y install flatpak-builder
-
-# Install dependencies for Toshy
-dnf5 -y install cairo-devel \
-        cairo-gobject-devel \
-        dbus-devel \
-        evtest \
-        git \
-        gobject-introspection-devel \
-        python3-devel \
-        python3-tkinter \
-        systemd-devel \
-        wayland-devel \
-        xset
 
 # Install Inter font
 dnf5 -y install rsms-inter-fonts
@@ -49,9 +42,6 @@ dnf5 -y install telnet
 
 # Install darkly and klassy
 dnf5 -y install darkly klassy
-
-# Install mingw64-gcc for Nikke
-dnf5 -y install mingw64-gcc mingw32-gcc
 
 # Enable services
 systemctl enable docker.socket

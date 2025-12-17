@@ -13,6 +13,9 @@ dnf5 -y install qv4l2
 # Install Ghostty
 dnf5 -y install ghostty
 
+# ...and remove Ptyxis. It's nice but I prefer another terminal.
+dnf5 -y remove ptyxis
+
 # Install docker
 dnf5 -y install docker-ce \
         docker-ce-cli \

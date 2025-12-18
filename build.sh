@@ -18,6 +18,7 @@ dnf5 -y remove ptyxis
 
 # Install bazaar development dependencies
 dnf5 -y install meson \
+        cmake \
         appstream-devel \
         gtk4-devel \
         libadwaita-devel \
@@ -27,6 +28,7 @@ dnf5 -y install meson \
         libyaml-devel \
         libsoup \
         libsoup-devel \
+        libdex-devel.x86-64 \
         libxmlb-devel \
         json-glib-devel \
         md4c-devel \

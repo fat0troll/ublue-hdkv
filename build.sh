@@ -18,30 +18,20 @@ dnf5 -y remove ptyxis
 
 # Install bazaar development dependencies
 dnf5 -y install meson \
-        libdex \
-        libdex-devel \
-        appstream \
         appstream-devel \
         gtk4-devel \
         libadwaita-devel \
         flatpak-devel \
-        glycin-libs \
         glycin-devel \
         glycin-gtk4-devel \
-        glycin-gtk4-libs \
-        libyaml \
         libyaml-devel \
         libsoup \
         libsoup-devel \
-        libxmlb \
         libxmlb-devel \
-        json-glib \
         json-glib-devel \
-        md4c \
         md4c-devel \
         webkitgtk6.0 \
         webkitgtk6.0-devel \
-        libsecret \
         libsecret-devel \
 
 # Install docker

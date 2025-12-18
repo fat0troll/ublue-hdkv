@@ -19,6 +19,7 @@ dnf5 -y remove ptyxis
 # Install bazaar development dependencies
 dnf5 -y install meson \
         cmake \
+        blueprint-compiler \
         appstream-devel \
         gtk4-devel \
         libadwaita-devel \

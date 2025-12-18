@@ -28,7 +28,7 @@ dnf5 -y install meson \
         libyaml-devel \
         libsoup \
         libsoup-devel \
-        libdex-devel.x86-64 \
+        libdex-devel \
         libxmlb-devel \
         json-glib-devel \
         md4c-devel \

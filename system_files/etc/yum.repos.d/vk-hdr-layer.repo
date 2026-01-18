@@ -1,0 +1,10 @@
+[copr:copr.fedorainfracloud.org:vulongm:vk-hdr-layer]
+name=Copr repo for vk-hdr-layer owned by vulongm
+baseurl=https://download.copr.fedorainfracloud.org/results/vulongm/vk-hdr-layer/fedora-$releasever-$basearch/
+type=rpm-md
+skip_if_unavailable=True
+gpgcheck=1
+gpgkey=https://download.copr.fedorainfracloud.org/results/vulongm/vk-hdr-layer/pubkey.gpg
+repo_gpgcheck=0
+enabled=1
+enabled_metadata=1

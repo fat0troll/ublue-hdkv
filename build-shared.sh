@@ -67,9 +67,6 @@ dnf5 -y install telnet
 # Install darkly and klassy
 dnf5 -y install darkly klassy
 
-# Install vk-hdr-layer: temporary hack for Nvidia + HDR without gamescope
-dnf5 -y install vk-hdr-layer
-
 # Enable services
 systemctl enable docker.socket
 systemctl enable podman.socket

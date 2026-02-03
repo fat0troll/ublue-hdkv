@@ -54,7 +54,7 @@ COPY build-nio.sh /tmp/build-nio.sh
 COPY system_files /
 
 RUN mkdir -p /var/lib/alternatives && \
-    /tmp/build.sh && \
+    /tmp/build-shared.sh && \
     /tmp/build-nio.sh && \
     dnf5 clean all && \
     ostree container commit

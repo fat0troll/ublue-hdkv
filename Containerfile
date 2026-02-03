@@ -48,12 +48,13 @@ FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 ## make modifications desired in your image and install packages by modifying the build.sh script
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
-COPY build.sh /tmp/build.sh
+COPY *.sh /tmp/
 
 COPY system_files /
 
 RUN mkdir -p /var/lib/alternatives && \
-    /tmp/build.sh && \
+    /tmp/build-shared.sh && \
+    /tmp/build-hdkv.sh && \
     dnf5 clean all && \
     ostree container commit
 ## NOTES:

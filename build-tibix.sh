@@ -5,8 +5,6 @@ set -ouex pipefail
 RELEASE="$(rpm -E %fedora)"
 
 # Install additional packages
-# dnf5 -y copr enable zawertun/ksysguard6
-# TODO: Fix ksysguard6 once it has a release for Fedora 43, since it is failing at the moment
 dnf5 -y install dmg2img \
     python3-vkbasalt-cli \
     dotool \

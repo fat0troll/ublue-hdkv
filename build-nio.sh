@@ -11,7 +11,6 @@ dnf5 -y install dmg2img \
     dwarfs \
     libFAudio \
     fsearch \
-    ksysguard6 \
     qdirstat \
     apg \
     ccze \

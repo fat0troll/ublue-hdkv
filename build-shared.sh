@@ -70,7 +70,7 @@ systemctl --global enable ublue-user-setup.service
 
 # Install ZSH configuration
 cd /usr/share
-git clone https://code.pztrn.name/hdkv/zsh-config.git
+git clone https://github.com/fat0troll/zsh-config.git
 cd zsh-config
 git checkout hdkv/ublue-hdkv
 

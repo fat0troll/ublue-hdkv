@@ -10,11 +10,6 @@ dnf5 install --enable-repo="copr:copr.fedorainfracloud.org:ublue-os:packages" -y
 # Install Qt V4L2 setup utility
 dnf5 -y install qv4l2
 
-# Install Ghostty
-dnf5 -y install ghostty
-
-# ...and remove Ptyxis. It's nice but I prefer another terminal.
-dnf5 -y remove ptyxis
 
 # Install bazaar development dependencies
 dnf5 -y install meson \

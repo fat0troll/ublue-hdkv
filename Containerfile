@@ -53,6 +53,7 @@ COPY *.sh /tmp/
 COPY system_files /
 
 RUN mkdir -p /var/lib/alternatives && \
+    chmod +x /tmp/*.sh && \
     /tmp/build-shared.sh && \
     /tmp/build-hdkv.sh && \
     dnf5 clean all && \

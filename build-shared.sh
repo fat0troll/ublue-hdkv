@@ -4,33 +4,9 @@ set -ouex pipefail
 
 RELEASE="$(rpm -E %fedora)"
 
-dnf5 install --enable-repo="copr:copr.fedorainfracloud.org:ublue-os:packages" -y \
-    ublue-setup-services
-
-# Install Qt V4L2 setup utility
-dnf5 -y install qv4l2
-
-
-# Install bazaar development dependencies
-dnf5 -y install meson \
-        cmake \
-        blueprint-compiler \
-        appstream-devel \
-        gtk4-devel \
-        libadwaita-devel \
-        flatpak-devel \
-        glycin-devel \
-        glycin-gtk4-devel \
-        libyaml-devel \
-        libsoup \
-        libsoup-devel \
-        libdex-devel \
-        libxmlb-devel \
-        json-glib-devel \
-        md4c-devel \
-        webkitgtk6.0 \
-        webkitgtk6.0-devel \
-        libsecret-devel \
+dnf5 install \
+        --enable-repo="copr:copr.fedorainfracloud.org:ublue-os:packages" -y \
+        ublue-setup-services
 
 # Install docker
 dnf5 -y install docker-ce \
@@ -52,7 +28,6 @@ dnf5 -y install rsms-inter-fonts
 # Install goverlay
 dnf5 -y install goverlay
 
-
 # Install VS Code
 dnf5 -y install code
 
@@ -61,6 +36,9 @@ dnf5 -y install telnet
 
 # Install darkly and klassy
 dnf5 -y install darkly klassy
+
+# Install Merkuro Calendar
+dnf5 -y install merkuro
 
 # Enable services
 systemctl enable docker.socket

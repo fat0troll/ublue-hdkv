@@ -1,2 +1,4 @@
 # macOS-alike font rendering.
 FREETYPE_PROPERTIES="cff:no-stem-darkening=0 autofitter:no-stem-darkening=0"
+# KWallet for gpg-agent
+PINENTRY_KDE_USE_WALLET=1

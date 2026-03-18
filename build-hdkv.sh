@@ -12,3 +12,8 @@ dnf5 -y remove ptyxis konsole
 
 # Install vk-hdr-layer: temporary hack for Nvidia + HDR without gamescope
 dnf5 -y install vk-hdr-layer
+
+# Dependencies for https://github.com/go-gl/glfw
+dnf5 -y install libX11-devel libXcursor-devel \
+        libXrandr-devel libXinerama-devel \
+        libXi-devel libXxf86vm-devel

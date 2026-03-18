@@ -4,11 +4,7 @@ set -ouex pipefail
 
 RELEASE="$(rpm -E %fedora)"
 
-dnf copr enable ublue-os/packages
-dnf config-manager \
-        --set-disabled "copr:copr.fedorainfracloud.org:ublue-os:packages"
-dnf -y --enablerepo copr:copr.fedorainfracloud.org:ublue-os:packages 
-        install ublue-setup-services
+dnf5 install -y ublue-setup-services
 
 # Install docker
 dnf5 -y install docker-ce \

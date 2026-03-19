@@ -39,6 +39,7 @@ dnf5 -y install darkly klassy
 
 # Install Merkuro Calendar
 dnf5 -y install merkuro
+dnf5 -y remove NetworkManager-config-connectivity-fedora
 
 # Enable services
 systemctl enable docker.socket

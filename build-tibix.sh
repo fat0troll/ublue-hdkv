@@ -16,7 +16,8 @@ dnf5 -y install dmg2img \
     perf \
     sysprof \
     virt-viewer \
-    uv
+    uv \
+    android-tools
 
 # TODO: follow ngrok releases from AUR
 wget --hsts-file /tmp/.wget-hsts -O /tmp/ngrok.tar.gz https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz

@@ -37,12 +37,6 @@ dnf5 -y install telnet
 # Install darkly and klassy
 dnf5 -y install darkly klassy
 
-# Install Merkuro Calendar
-dnf5 -y install merkuro \
-        kdepim-addons \
-        kdepim-runtime \
-        qt6-qtlocation
-
 # Enable services
 systemctl enable docker.socket
 systemctl enable podman.socket

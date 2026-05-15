@@ -33,8 +33,3 @@ mkdir /tmp/zrok-install
 tar -xf /tmp/zrok.tar.gz -C /tmp/zrok-install
 mv /tmp/zrok-install/zrok /usr/bin
 rm -r /tmp/zrok*
-
-
-# TODO: autoupdate
-# hakuneko-desktop
-dnf5 -y install https://github.com/manga-download/hakuneko/releases/download/v6.1.7/hakuneko-desktop_6.1.7_linux_amd64.rpm

@@ -21,8 +21,9 @@ dnf5 install -y \
     containerd.io
 
 # Install zsh and utilites for it
-dnf5 -y install zsh \
-        zsh-autosuggestions
+dnf5 -y install \
+    zsh \
+    zsh-autosuggestions
 
 # Install flatpak builder
 dnf5 -y install flatpak-builder
@@ -37,11 +38,16 @@ dnf5 -y install goverlay
 dnf5 config-manager addrepo --from-repofile="https://packages.microsoft.com/yumrepos/vscode/config.repo"
 dnf5 config-manager setopt vscode-yum.enabled=0
 dnf5 install -y \
-        --enable-repo="vscode-yum" \
-        code
+    --enable-repo="vscode-yum" \
+    code
 
 # Install useful CLI tools
 dnf5 -y install telnet
+
+# Install ventoy
+dnf5 -y copr enable karlisk/ventoy
+dnf5 -y install ventoy
+dnf5 -y copr disable karlisk/ventoy
 
 # Enable services
 systemctl enable docker.socket

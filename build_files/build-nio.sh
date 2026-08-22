@@ -7,10 +7,7 @@ RELEASE="$(rpm -E %fedora)"
 # Install additional packages
 dnf5 -y install dmg2img \
     python3-vkbasalt-cli \
-    dotool \
-    dwarfs \
     libFAudio \
-    fsearch \
     qdirstat \
     apg \
     ccze \
@@ -24,6 +21,21 @@ dnf5 -y install dmg2img \
 dnf5 install -y \
     --enable-repo="terra" \
     darkly klassy
+
+# Install dotool
+dnf5 -y copr enable smallcms/dotool
+dnf5 -y install dotool
+dnf5 -y copr disable smallcms/dotool
+
+# Install dwarfs
+dnf5 -y copr enable jc141/DwarFS
+dnf5 -y install dwarfs
+dnf5 -y copr disable jc141/DwarFS
+
+# Install fsearch
+dnf5 -y copr enable cboxdoerfer/fsearch
+dnf5 -y install fsearch
+dnf5 -y copr disable cboxdoerfer/fsearch
 
 # TODO: follow ngrok releases from AUR
 wget --hsts-file /tmp/.wget-hsts -O /tmp/ngrok.tar.gz https://bin.equinox.io/a/9VU6NY9RyvK/ngrok-v3-3.19.1-linux-amd64.tar.gz

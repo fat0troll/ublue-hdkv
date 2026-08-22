@@ -7,9 +7,6 @@ RELEASE="$(rpm -E %fedora)"
 # Install additional packages
 dnf5 -y install dmg2img \
     python3-vkbasalt-cli \
-    dotool \
-    dwarfs \
-    fsearch \
     qdirstat \
     git-lfs \
     binutils \
@@ -28,6 +25,20 @@ dnf5 install -y \
     --enable-repo="terra" \
     darkly klassy
 
+# Install dotool
+dnf5 -y copr enable smallcms/dotool
+dnf5 -y install dotool
+dnf5 -y copr disable smallcms/dotool
+
+# Install dwarfs
+dnf5 -y copr enable jc141/DwarFS
+dnf5 -y install dwarfs
+dnf5 -y copr disable jc141/DwarFS
+
+# Install fsearch
+dnf5 -y copr enable cboxdoerfer/fsearch
+dnf5 -y install fsearch
+dnf5 -y copr disable cboxdoerfer/fsearch
 
 # TODO: follow ngrok releases from AUR
 wget --hsts-file /tmp/.wget-hsts -O /tmp/ngrok.tar.gz https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
@@ -45,4 +56,4 @@ dnf5 -y install https://github.com/Umio-Yasuno/amdgpu_top/releases/download/v0.1
 dnf5 -y install https://github.com/PancakeTAS/lsfg-vk/releases/download/v1.0.0/lsfg-vk-1.0.0.x86_64.rpm
 
 # XPipe - TODO: Fix, yet another app that needs /opt/
-# dnf5 -y install https://github.com/xpipe-io/xpipe/releases/latest/download/xpipe-installer-linux-x86_64.rpm
+dnf5 -y install https://github.com/xpipe-io/xpipe/releases/latest/download/xpipe-installer-linux-x86_64.rpm

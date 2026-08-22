@@ -5,16 +5,20 @@ set -ouex pipefail
 # Copy the contents of system_files/ of the git repo to /
 cp -avf "/ctx/system_files"/. /
 
-dnf5 install \
-        --enable-repo="copr:copr.fedorainfracloud.org:ublue-os:packages" -y \
-        ublue-setup-services
+dnf5 install -y \
+    --enable-repo="copr:copr.fedorainfracloud.org:ublue-os:packages" \
+    ublue-setup-services
 
 # Install docker
-dnf5 -y install docker-ce \
-        docker-ce-cli \
-        docker-buildx-plugin \
-        docker-compose-plugin \
-        containerd.io
+dnf5 config-manager addrepo --from-repofile="https://download.docker.com/linux/fedora/docker-ce.repo"
+dnf5 config-manager setopt docker-ce-stable.enabled=0
+dnf5 install -y \
+    --enable-repo="docker-ce-stable" \
+    docker-ce \
+    docker-ce-cli \
+    docker-buildx-plugin \
+    docker-compose-plugin \
+    containerd.io
 
 # Install zsh and utilites for it
 dnf5 -y install zsh \
@@ -30,7 +34,11 @@ dnf5 -y install rsms-inter-fonts
 dnf5 -y install goverlay
 
 # Install VS Code
-dnf5 -y install code
+dnf5 config-manager addrepo --from-repofile="https://packages.microsoft.com/yumrepos/vscode/config.repo"
+dnf5 config-manager setopt vscode-yum.enabled=0
+dnf5 install -y \
+        --enable-repo="vscode-yum" \
+        code
 
 # Install useful CLI tools
 dnf5 -y install telnet

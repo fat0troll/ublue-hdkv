@@ -25,6 +25,8 @@ jobs:
     name: Build and push image
     runs-on: ubuntu-24.04
     strategy:
+      # This prevents a failure in one job from cancelling the others
+      fail-fast: false
       matrix:
         container_name: [vtsk, nio, tibix]
 

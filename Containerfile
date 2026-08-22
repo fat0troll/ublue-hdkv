@@ -1,3 +1,4 @@
+# code: language=dockerfile insertSpaces=true tabSize=4
 # Allow build scripts to be referenced without being copied into the final image
 FROM scratch AS ctx
 COPY build_files /
@@ -23,8 +24,7 @@ FROM ghcr.io/ublue-os/bazzite-nvidia-open:stable
 ##
 ## Uncomment the following line if one desires to make /opt immutable and be able to be used
 ## by the package manager.
-
-# RUN rm /opt && mkdir /opt
+RUN rm /opt && mkdir /opt
 
 ### MODIFICATIONS
 ## make modifications desired in your image and install packages by modifying the build.sh script

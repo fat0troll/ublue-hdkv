@@ -2,7 +2,8 @@
 
 set -ouex pipefail
 
-RELEASE="$(rpm -E %fedora)"
+# Copy the contents of system_files/ of the git repo to /
+cp -avf "/ctx/system_files"/. /
 
 dnf5 install \
         --enable-repo="copr:copr.fedorainfracloud.org:ublue-os:packages" -y \
@@ -33,9 +34,6 @@ dnf5 -y install code
 
 # Install useful CLI tools
 dnf5 -y install telnet
-
-# Install darkly and klassy
-dnf5 -y install darkly klassy
 
 # Enable services
 systemctl enable docker.socket

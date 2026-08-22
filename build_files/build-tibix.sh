@@ -23,6 +23,9 @@ dnf5 -y install dmg2img \
     systemd-devel \
     libusb1-devel
 
+# Install darkly and klassy
+dnf5 -y install darkly klassy
+
 # TODO: follow ngrok releases from AUR
 wget --hsts-file /tmp/.wget-hsts -O /tmp/ngrok.tar.gz https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
 mkdir /tmp/ngrok-install

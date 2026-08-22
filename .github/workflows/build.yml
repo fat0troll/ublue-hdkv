@@ -26,10 +26,10 @@ jobs:
     runs-on: ubuntu-24.04
     strategy:
       matrix:
-        container_name: [hdkv, nio, tibix]
+        container_name: [vtsk, nio, tibix]
 
     env:
-      ENV_SUFFIX: "{{ matrix.container_name }}"
+      ENV_SUFFIX: "${{ matrix.container_name }}"
 
     permissions:
       contents: read

@@ -54,6 +54,17 @@ systemctl enable docker.socket
 systemctl enable podman.socket
 systemctl enable ublue-system-setup.service
 systemctl --global enable ublue-user-setup.service
+systemctl enable ublue-hdkv-groups.service
+
+# Install virtualization packages
+dnf5 -y --setopt=install_weak_deps=False install \
+    qemu \
+    libvirt \
+    qemu-kvm \
+    virt-manager \
+    edk2-ovmf \
+    guestfs-tools
+
 
 # Install ZSH configuration
 cd /usr/share

@@ -1,0 +1,9 @@
+[Unit]
+Description=Add wheel members to docker, and libvirt groups
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/ublue-hdkv-groups
+
+[Install]
+WantedBy=default.target

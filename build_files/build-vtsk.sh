@@ -2,8 +2,6 @@
 
 set -ouex pipefail
 
-RELEASE="$(rpm -E %fedora)"
-
 # Install Ghostty
 dnf5 install -y \
     --enable-repo="terra" \

@@ -83,22 +83,12 @@ jobs:
             ${DEFAULT_TAG}
 
       # This is optional, this provides smaller delta updates
-      - name: Rechunk with rpm-ostree
+      - name: Rechunk with Chunkah
         id: rechunk
         run: |
-          just -F env/${ENV_SUFFIX}.env ostree-rechunk \
+          just -F env/${ENV_SUFFIX}.env rechunk \
             ${IMAGE_NAME} \
             ${DEFAULT_TAG}
-
-      # If you are feeling adventurous, use the new distro agnostic rechunker
-      # https://github.com/coreos/chunkah
-      # You can delete the Rechunk with rpm-ostree portion then if you use this
-      #- name: Rechunk with Chunkah
-      #  id: rechunk
-      #  run: |
-      #    just rechunk \
-      #      ${IMAGE_NAME} \
-      #      ${DEFAULT_TAG}
 
       - name: Generate Build Tags
         id: gen-build-tags

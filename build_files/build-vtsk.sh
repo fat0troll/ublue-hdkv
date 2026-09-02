@@ -12,7 +12,7 @@ dnf5 -y remove konsole
 
 # Install portproton
 dnf -y copr enable boria138/portproton
-dnf -y install portproton
+dnf -y install portprotonqt
 dnf -y copr disable boria138/portproton
 
 # ..and remove Lutris. I don't use it.

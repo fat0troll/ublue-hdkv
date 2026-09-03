@@ -31,9 +31,6 @@ dnf5 -y install flatpak-builder
 # Install Inter font
 dnf5 -y install rsms-inter-fonts
 
-# Install goverlay
-dnf5 -y install goverlay
-
 # Install VS Code
 dnf5 config-manager addrepo --from-repofile="https://packages.microsoft.com/yumrepos/vscode/config.repo"
 dnf5 config-manager setopt vscode-yum.enabled=0

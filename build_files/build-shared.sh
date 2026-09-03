@@ -65,7 +65,7 @@ dnf5 -y --setopt=install_weak_deps=False install \
 
 # Install ZSH configuration
 cd /usr/share
-git clone https://github.com/fat0troll/zsh-config.git
+git clone https://code.pztrn.name/hdkv/zsh-config.git
 cd zsh-config
 git checkout hdkv/ublue-hdkv
 

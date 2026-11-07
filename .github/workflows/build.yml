@@ -1,9 +1,6 @@
 ---
-name: Build container image (ublue-hdkv)
+name: Build container images
 on:
-  pull_request:
-    branches:
-      - main
   schedule:
     - cron: "05 10 * * *" # 10:05am UTC everyday
   push:

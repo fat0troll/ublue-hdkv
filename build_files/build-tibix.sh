@@ -33,20 +33,25 @@ dnf5 -y copr enable cboxdoerfer/fsearch
 dnf5 -y install fsearch
 dnf5 -y copr disable cboxdoerfer/fsearch
 
-# TODO: follow ngrok releases from AUR
-wget --hsts-file /tmp/.wget-hsts -O /tmp/ngrok.tar.gz https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
+# renovate: datasource=docker depName=ngrok/ngrok extractVersion=^(?<version>\d+\.\d+\.\d+)-debian$
+NGROK_VERSION=3.39.13
+wget --hsts-file /tmp/.wget-hsts -O /tmp/ngrok.tar.gz "https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-${NGROK_VERSION}-linux-amd64.tgz"
 mkdir /tmp/ngrok-install
 tar -xf /tmp/ngrok.tar.gz -C /tmp/ngrok-install
 mv /tmp/ngrok-install/ngrok /usr/bin
 rm -r /tmp/ngrok*
 
-# TODO: make sure these packages are also auto-updated!!
-# maybe let dependabot handle those?
 # amdgpu_top
-dnf5 -y install https://github.com/Umio-Yasuno/amdgpu_top/releases/download/v0.11.0/amdgpu_top-0.11.0-1.x86_64.rpm
+# renovate: datasource=github-releases depName=Umio-Yasuno/amdgpu_top
+AMDGPU_TOP_VERSION=v0.11.0
+dnf5 -y install "https://github.com/Umio-Yasuno/amdgpu_top/releases/download/${AMDGPU_TOP_VERSION}/amdgpu_top-${AMDGPU_TOP_VERSION#v}-1.x86_64.rpm"
 
 # LSFG-VK
-dnf5 -y install https://github.com/PancakeTAS/lsfg-vk/releases/download/v1.0.0/lsfg-vk-1.0.0.x86_64.rpm
+# renovate: datasource=github-releases depName=PancakeTAS/lsfg-vk
+LSFG_VK_VERSION=v1.0.0
+dnf5 -y install "https://github.com/PancakeTAS/lsfg-vk/releases/download/${LSFG_VK_VERSION}/lsfg-vk-${LSFG_VK_VERSION#v}.x86_64.rpm"
 
 # XPipe - TODO: Fix, yet another app that needs /opt/
-dnf5 -y install https://github.com/xpipe-io/xpipe/releases/latest/download/xpipe-installer-linux-x86_64.rpm
+# renovate: datasource=github-releases depName=xpipe-io/xpipe
+XPIPE_VERSION=24.10
+dnf5 -y install "https://github.com/xpipe-io/xpipe/releases/download/${XPIPE_VERSION}/xpipe-installer-linux-x86_64.rpm"

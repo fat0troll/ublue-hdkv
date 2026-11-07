@@ -23,11 +23,6 @@ dnf5 install -y \
     --enable-repo="terra" \
     darkly klassy
 
-# Install dotool
-dnf5 -y copr enable smallcms/dotool
-dnf5 -y install dotool
-dnf5 -y copr disable smallcms/dotool
-
 # Install dwarfs
 dnf5 -y copr enable jc141/DwarFS
 dnf5 -y install dwarfs

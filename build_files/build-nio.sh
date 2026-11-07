@@ -3,27 +3,22 @@
 set -ouex pipefail
 
 # Install additional packages
+# COPR is needed for ccze
+dnf5 -y copr enable caiobruno/fedora-packages
 dnf5 -y install dmg2img \
     python3-vkbasalt-cli \
-    libFAudio \
     qdirstat \
     apg \
     ccze \
-    python3-icoextract \
     s-tui \
-    croc \
     kvantum \
     webkit2gtk4.1-devel
+dnf5 -y copr disable caiobruno/fedora-packages
 
 # Install darkly and klassy
 dnf5 install -y \
     --enable-repo="terra" \
     darkly klassy
-
-# Install dotool
-dnf5 -y copr enable smallcms/dotool
-dnf5 -y install dotool
-dnf5 -y copr disable smallcms/dotool
 
 # Install dwarfs
 dnf5 -y copr enable jc141/DwarFS

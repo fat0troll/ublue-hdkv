@@ -42,9 +42,9 @@ dnf5 install -y \
 dnf5 -y install telnet
 
 # Install ventoy
-dnf5 -y copr enable karlisk/ventoy
+dnf5 -y copr enable caiobruno/fedora-packages
 dnf5 -y install ventoy
-dnf5 -y copr disable karlisk/ventoy
+dnf5 -y copr disable caiobruno/fedora-packages
 
 # Enable services
 systemctl enable docker.socket

@@ -43,7 +43,7 @@ rm -r /tmp/ngrok*
 
 # amdgpu_top
 # renovate: datasource=github-releases depName=Umio-Yasuno/amdgpu_top
-AMDGPU_TOP_VERSION=v0.11.0
+AMDGPU_TOP_VERSION=v0.11.5
 dnf5 -y install "https://github.com/Umio-Yasuno/amdgpu_top/releases/download/${AMDGPU_TOP_VERSION}/amdgpu_top-${AMDGPU_TOP_VERSION#v}-1.x86_64.rpm"
 
 # LSFG-VK

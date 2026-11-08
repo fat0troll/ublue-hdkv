@@ -43,5 +43,5 @@ ZROK_VERSION=v2.0.9
 wget --hsts-file /tmp/.wget-hsts -O /tmp/zrok.tar.gz "https://github.com/openziti/zrok/releases/download/${ZROK_VERSION}/zrok_${ZROK_VERSION#v}_linux_amd64.tar.gz"
 mkdir /tmp/zrok-install
 tar -xf /tmp/zrok.tar.gz -C /tmp/zrok-install
-mv /tmp/zrok-install/zrok /usr/bin
+mv /tmp/zrok-install/zrok2 /usr/bin/zrok
 rm -r /tmp/zrok*

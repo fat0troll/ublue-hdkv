@@ -65,9 +65,7 @@ dnf5 -y --setopt=install_weak_deps=False install \
 
 # Install ZSH configuration
 cd /usr/share
-git clone https://code.pztrn.name/hdkv/zsh-config.git
-cd zsh-config
-git checkout hdkv/ublue-hdkv
+git clone https://code.pztrn.name/misc/zsh-config.git
 
 # Load iptable_nat module for docker-in-docker.
 # See:

@@ -1,7 +1,9 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:best-practices"
+    "config:best-practices",
+    ":dependencyDashboard",
+    "group:allNonMajor"
   ],
   "customManagers": [
     {
@@ -16,7 +18,7 @@
   "packageRules": [
     {
       "automerge": true,
-      "matchUpdateTypes": ["pin", "pinDigest"]
+      "matchUpdateTypes": ["minor", "patch", "pin", "pinDigest", "digest"]
     }
   ]
 }

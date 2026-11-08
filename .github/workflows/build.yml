@@ -4,8 +4,6 @@ on:
   schedule:
     - cron: "05 10 * * *" # 10:05am UTC everyday
   push:
-    branches:
-      - main
     paths-ignore:
       - "**/README.md"
   workflow_dispatch:
@@ -29,6 +27,11 @@ jobs:
 
     env:
       ENV_SUFFIX: "${{ matrix.container_name }}"
+      # Full pipeline (rechunk, tag, push, sign) only on main:
+      # pushes to main, the schedule (always runs on main) and
+      # workflow_dispatch started from main. Every other branch
+      # only builds the image as a check.
+      FULL_BUILD: ${{ github.ref == 'refs/heads/main' }}
 
     permissions:
       contents: read
@@ -79,9 +82,12 @@ jobs:
             ${IMAGE_NAME} \
             ${DEFAULT_TAG}
 
+      # ---- Everything below runs on main only ----
+
       # This is optional, this provides smaller delta updates
       - name: Rechunk with Chunkah
         id: rechunk
+        if: env.FULL_BUILD == 'true'
         run: |
           just -F env/${ENV_SUFFIX}.env rechunk \
             ${IMAGE_NAME} \
@@ -89,6 +95,7 @@ jobs:
 
       - name: Generate Build Tags
         id: gen-build-tags
+        if: env.FULL_BUILD == 'true'
         run: |
           alias_tags="$(just -F env/${ENV_SUFFIX}.env generate-build-tags \
                         ${IMAGE_NAME} \
@@ -100,6 +107,7 @@ jobs:
 
       - name: Tag Image
         id: tag-images
+        if: env.FULL_BUILD == 'true'
         env:
           ALIAS_TAGS: ${{ steps.gen-build-tags.outputs.alias_tags }}
         run: |
@@ -108,18 +116,16 @@ jobs:
             "${DEFAULT_TAG}" \
             "${ALIAS_TAGS}"
 
-      # These `if` statements are so that pull requests for your custom images do not make it publish any packages under your name without you knowing
-      # They also check if the runner is on the default branch so that things like the merge queue (if you enable it), are going to work
       - name: Login to GitHub Container Registry
         uses: docker/login-action@8aa5831fb8d48d8f76594c7ddde61ae58019f550 # v4.8.0
-        if: github.event_name != 'pull_request' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+        if: env.FULL_BUILD == 'true'
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Push To GHCR
-        if: github.event_name != 'pull_request' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+        if: env.FULL_BUILD == 'true'
         id: push-image
         env:
           ALIAS_TAGS: ${{ steps.gen-build-tags.outputs.alias_tags }}
@@ -139,14 +145,14 @@ jobs:
       # to consume. For more details, review the image signing section of the README.
       - name: Install Cosign
         uses: sigstore/cosign-installer@756fe2d284c7292c4e9b62c8a28f1e5629c59532 # v4.1.3
-        if: github.event_name != 'pull_request' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+        if: env.FULL_BUILD == 'true'
         with:
           # be careful when upgrading major versions
           cosign-release: "v3.1.4"
 
       - name: Sign container image
         id: sign-image
-        if: github.event_name != 'pull_request' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+        if: env.FULL_BUILD == 'true'
         env:
           COSIGN_EXPERIMENTAL: false
           COSIGN_PRIVATE_KEY: ${{ secrets.SIGNING_SECRET }}

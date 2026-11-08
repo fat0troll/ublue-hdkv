@@ -39,7 +39,7 @@ mv /tmp/ngrok-install/ngrok /usr/bin
 rm -r /tmp/ngrok*
 
 # renovate: datasource=github-releases depName=openziti/zrok
-ZROK_VERSION=v0.4.49
+ZROK_VERSION=v2.0.9
 wget --hsts-file /tmp/.wget-hsts -O /tmp/zrok.tar.gz "https://github.com/openziti/zrok/releases/download/${ZROK_VERSION}/zrok_${ZROK_VERSION#v}_linux_amd64.tar.gz"
 mkdir /tmp/zrok-install
 tar -xf /tmp/zrok.tar.gz -C /tmp/zrok-install

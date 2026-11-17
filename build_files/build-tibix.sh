@@ -53,5 +53,5 @@ dnf5 -y install "https://github.com/PancakeTAS/lsfg-vk/releases/download/${LSFG_
 
 # XPipe - TODO: Fix, yet another app that needs /opt/
 # renovate: datasource=github-releases depName=xpipe-io/xpipe
-XPIPE_VERSION=24.11
+XPIPE_VERSION=24.12
 dnf5 -y install "https://github.com/xpipe-io/xpipe/releases/download/${XPIPE_VERSION}/xpipe-installer-linux-x86_64.rpm"

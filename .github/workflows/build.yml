@@ -148,7 +148,7 @@ jobs:
         if: env.FULL_BUILD == 'true'
         with:
           # be careful when upgrading major versions
-          cosign-release: "v3.1.5"
+          cosign-release: "v3.1.6"
 
       - name: Sign container image
         id: sign-image

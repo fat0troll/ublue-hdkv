@@ -31,6 +31,11 @@ dnf5 -y install flatpak-builder
 # Install Inter font
 dnf5 -y install rsms-inter-fonts
 
+# Install Maple Mono font with Nerd Fonts integration
+dnf5 -y copr enable canderson9/maple-mono-fonts
+dnf5 -y install maple-mono-fonts maple-mono-nf-fonts
+dnf5 -y copr disable canderson9/maple-mono-fonts
+
 # Install VS Code
 dnf5 config-manager addrepo --from-repofile="https://packages.microsoft.com/yumrepos/vscode/config.repo"
 dnf5 config-manager setopt vscode-yum.enabled=0
